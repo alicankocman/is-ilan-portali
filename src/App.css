@@ -68,3 +68,28 @@ body{
   font-style: italic;
   color: #555;
 }
+
+.job-detail-img{
+margin-left: 40%;
+width: 15%;
+}
+
+.konum-category{
+  margin-left: 41%;
+}
+
+.job-title{
+  margin-left: 40%;
+}
+
+.geri-don{
+  margin-left: 40%;
+  border: 5px solid #ccc;
+  position: relative;
+  top: 20px;
+  left: 70px;
+  text-decoration: none;
+  color: black;
+  border-radius: 30%;
+  background-color: white;
+}
