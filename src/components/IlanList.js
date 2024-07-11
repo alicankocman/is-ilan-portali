@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const is_ilanlari_veriler = [
   {
@@ -73,21 +73,24 @@ const is_ilanlari_veriler = [
     "category": "DevOps"
   }
 ];
-
 const IlanKartlari = ({ ilan, index }) => (
   <div className="ilan">
     <div className="ilan-baslik">{ilan.job_title}</div>
     <img src={ilan.job_image_url} alt={ilan.job_title} />
+    <div className="ilan-aciklama">{ilan.job_description}</div>
     <div className="ilan-lokasyon">Konum: {ilan.location}</div>
     <div className="ilan-kategori">Kategori: {ilan.category}</div>
     <Link to={`/job/${index}`}>Detayları Gör</Link>
   </div>
 );
 
-const IlanList = ({ searchTerm }) => {
-  const filteredJobs = is_ilanlari_veriler.filter((ilan) =>
-    ilan.job_title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+const IlanList = ({ searchTerm, location, category }) => {
+  const filteredJobs = is_ilanlari_veriler.filter((ilan) => {
+    const matchesSearchTerm = ilan.job_title.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesLocation = location ? ilan.location === location : true;
+    const matchesCategory = category ? ilan.category === category : true;
+    return matchesSearchTerm && matchesLocation && matchesCategory;
+  });
 
   return (
     <div id="ilan-listesi">
