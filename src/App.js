@@ -9,10 +9,7 @@ function App() {
   const [selectedLocation, setSelectedLocation] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
 
-  // Arama yapma işlevini tanımlayalım
-  const handleSearch = () => {
-    // Yalnızca butona basıldığında arama yapar
-  };
+
 
   return (
     <Router>
@@ -57,7 +54,7 @@ function App() {
               <option value="Proje Yönetimi">Proje Yönetimi</option>
               <option value="DevOps">DevOps</option>
             </select>
-            <button id="arama_butonu" onClick={handleSearch}>Ara</button>
+            <button id="arama_butonu">Ara</button>
           </div>
         </div>
         <Routes>
